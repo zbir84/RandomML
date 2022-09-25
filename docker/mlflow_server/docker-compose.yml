@@ -1,0 +1,29 @@
+version: '3.3'
+
+services:
+    postgres:
+        restart: always
+        image: postgres
+        container_name: mlflow_db
+        ports:
+            - 5431:5432
+        environment:
+            POSTGRES_USER: ${POSTGRES_USER}
+            POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+        volumes:
+            - dbdata:/var/lib/postgresql/data
+
+    mlflow:
+        restart: always
+        build: .
+        image: mlflow_server
+        container_name: mlflow_server
+        ports:
+            - 5000:5000
+        command: mlflow server --backend-store-uri postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432 --artifacts-destination file://mlruns/ --serve-artifacts --host 0.0.0.0
+        volumes:
+            - mlruns:/mlruns
+
+volumes:
+    dbdata:
+    mlruns:

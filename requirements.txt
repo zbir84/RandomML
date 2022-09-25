@@ -1,0 +1,9 @@
+mlflow==1.29.0
+pandas
+matplotlib
+ipython
+ipykernel
+statsmodels
+scikit-learn
+seaborn
+psycopg2-binary
