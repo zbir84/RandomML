@@ -1,4 +1,4 @@
-mlflow==1.29.0
+mlflow==2.0.0rc0
 pandas
 matplotlib
 ipython

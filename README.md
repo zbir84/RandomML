@@ -5,8 +5,9 @@ Lech's Machine Learning Sandbox
 
 * `docker ps`
 * `docker image ls`
+* `docker image rm xxx`
 * `docker build .`
-* `docker build --build-arg VERSION=1.29.0 --tag mlflow_server:latest .`
+* `docker build --build-arg VERSION=2.0.0rc0 --tag mlflow_server:latest .`
 * `docker-compose up -d`
 * `docker-compose down`
 * `docker logs container_name`

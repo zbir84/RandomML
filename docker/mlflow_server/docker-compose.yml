@@ -20,7 +20,7 @@ services:
         container_name: mlflow_server
         ports:
             - 5000:5000
-        command: mlflow server --backend-store-uri postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432 --artifacts-destination file://mlruns/ --serve-artifacts --host 0.0.0.0
+        command: mlflow server --backend-store-uri postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432 --artifacts-destination file://artifacts/mlruns/ --serve-artifacts --host 0.0.0.0
         volumes:
             - mlruns:/mlruns
 
